@@ -22,7 +22,7 @@ public class JWTService {
 	
 	private String secretKey = "";
 	
-	public JWTService() {
+	public JWTService() {   //constructor
 		try {
 			KeyGenerator keyGen = KeyGenerator.getInstance("HmacSHA256");
 			SecretKey sk = keyGen.generateKey();
@@ -31,8 +31,9 @@ public class JWTService {
 			throw new RuntimeException(e);
 		}
 	}
-
-	public String generateToken(String username) {
+	
+	//Generate a JWT Token in Spring Boot
+	public String generateToken(String username) {  //Generate a JWT Token in Spring Boot
 		
 		Map<String, Object> claims = new HashMap<>();
 		return Jwts.builder()
